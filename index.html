@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>shortageofname | Portfolio</title>
-  <meta name="description" content="Portfolio of shortageofname - Full-Stack Developer & Security Enthusiast" />
+  <meta name="description" content="Security enthusiast ∙ Developer ∙ Open-source lover"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
@@ -13,7 +13,7 @@
       --card: #ffffff;
       --border: #e2e8f0;
       --primary: #3b82f6;
-      --shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow: 0 10px 25px -3px rgba(0,0,0,0.1);
     }
     [data-theme="dark"] {
       --bg: #0f172a;
@@ -21,7 +21,7 @@
       --card: #1e293b;
       --border: #334155;
       --primary: #60a5fa;
-      --shadow: 0 10px 15px -3px rgba(0,0,0,0.4);
+      --shadow: 0 10px 25px -3px rgba(0,0,0,0.4);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -29,34 +29,59 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      transition: all 0.3s ease;
+      transition: background 0.4s ease, color 0.4s ease;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 4rem;
     }
 
-    /* Top Social Bar */
-    .top-social {
+    /* Fixed Top Bar */
+    .top-bar {
       position: fixed;
       top: 20px;
-      right: 80px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      gap: 16px;
-      z-index: 99;
-      background: rgba(255,255,255,0.1);
-      padding: 10px 16px;
-      border-radius: 50px;
-      backdrop-filter: blur(10px);
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 60px;
+      padding: 12px 24px;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
-    .top-social a {
+    .social-icons a {
+      display: flex;
+      gap: 18px;
+    }
+    .social-icons a {
       color: var(--text);
-      font-size: 1.4rem;
-      opacity: 0.8;
-      transition: all 0.2s;
+      font-size: 1.45rem;
+      opacity: 0.85;
+      transition: all 0.3s ease;
     }
-    .top-social a:hover { opacity: 1; transform: translateY(-3px); }
+    .social-icons a:hover {
+      opacity: 1;
+      transform: translateY(-4px) scale(1.15);
+    }
+    .theme-toggle {
+      background: rgba(0,0,0,0.2);
+      border: none;
+      color: white;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .theme-toggle:hover { transform: scale(1.15); }
 
     header {
       text-align: center;
-      padding: 5rem 1rem 3rem;
+      padding: 7rem 1rem 4rem;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       position: relative;
@@ -66,188 +91,191 @@
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 120px;
+      height: 150px;
       background: var(--bg);
-      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      border-radius: 50% 50% 0 0;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; position: relative; z-index: 1; }
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
     .avatar {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
-      border: 6px solid rgba(255,255,255,0.3);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 8px solid rgba(255,255,255,0.3);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     }
-    h1 { font-size: 2.8rem; margin: 0.5rem 0; }
-    .bio { font-size: 1.3rem; opacity: 0.9; max-width: 700px; }
-
-    .theme-toggle {
-      position: fixed;
-      top: 20 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      cursor: pointer;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-    .theme-toggle:hover { transform: scale(1.1); }
+    h1 { font-size: 3rem; margin: 1rem 0 0.5rem; }
+    .bio { font-size: 1.35rem; max-width: 720px; margin: 0 auto; opacity: 0.95; }
 
     main { padding: 4rem 0; }
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      gap: 2rem;
+      margin-bottom: 4rem;
     }
     .stat-card {
       background: var(--card);
-      padding: 1.5rem;
-      border-radius: 16px;
+      padding: 2rem;
+      border-radius: 20px;
       text-align: center;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
       transition: transform 0.3s;
     }
-    .stat-card:hover { transform: translateY(-8px); }
-    .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--primary); }
-    .stat-label { color: #64748b; font-size: 0.9rem; margin-top: 0.5rem; }
+    .stat-card:hover { transform: translateY(-10px); }
+    .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 400 1rem; color: #64748b; margin-top: 0.5rem; }
 
-    /* Fixed even repo cards */
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin: 3rem 0 2.5rem;
+      background: linear-gradient(90deg, var(--primary), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .repos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
     }
     .repo-card {
       background: var(--card);
-      border-radius: 16px;
-      padding: 1.6rem;
+      border-radius: 20px;
+      padding: 1.8rem;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      transition: all 0.3s;
+      transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
-      height: 100%; /* This makes all cards same height */
+      height: 100%;
     }
     .repo-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
     }
     .repo-name {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
       color: var(--primary);
       text-decoration: none;
+      margin-bottom: 0.6rem;
+      display: block;
     }
     .repo-name:hover { text-decoration: underline; }
     .repo-desc {
       color: #64748b;
       margin: 1rem 0 1.5rem;
-      font-size: 0.95rem;
       flex-grow: 1;
-      min-height: 60px;
+      font-size: 0.98rem;
+      line-height: 1.5;
     }
     .repo-meta {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: #64748b;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
       margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
     }
     .language-color {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
       display: inline-block;
     }
-    .loading, .error {
-      text-align: center;
-      padding: 4rem;
-      font-size: 1.2rem;
-      color: #94a3b8;
-      grid-column: 1 / -1;
+
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 999;
     }
+    .scroll-top.show { opacity: 1; visibility: visible; }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      color: #64748b;
-      font-size: 0.9rem;
+      padding: 3rem 1rem 2rem;
+      color: #94a3b8;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      .bio { font-size: 1.1rem; }
-      .avatar { width: 120px; height: 120px; }
-      .top-social { right: 80px; gap: 12px; }
-      .top-social a { font-size: 1.2rem; }
+      .top-bar { padding: 10px 16px; gap: 14px; }
+      .social-icons a { font-size: 1.3rem; }
+      .theme-toggle { width: 42px; height: 42px; font-size: 1.2rem; }
+      h1 { font-size: 2.4rem; }
+      .avatar { width: 130px; height: 130px; }
+      .repos-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Social Links -->
-  <div class="top-social">
-    <a href="https://github.com/shortageofname" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/shortageofname" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://tryhackme.com/p/shortageofname" target="_blank" aria-label="TryHackMe"><i class="fas fa-shield-alt"></i></a>
-    <a href="mailto:your-email@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  <!-- Fixed Top Bar (centered, no overlap) -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://github.com/shortageofname" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/shortageofname" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://tryhackme.com/p/shortageofname" target="_blank" aria-label="TryHackMe"><i class="fas fa-shield-alt"></i></a>
+      <a href="mailto:youremail@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
   </div>
-
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </button>
 
   <header>
     <div class="container">
-      <div class="profile">
-        <img id="avatar" class="avatar" src="" alt="Profile" />
-        <h1 id="name">shortageofname</h1>
-        <p class="bio" id="bio">Loading bio...</p>
-      </div>
+      <img id="avatar" class="avatar" src="" alt="Profile"/>
+      <h1 id="name">shortageofname</h1>
+      <p class="bio" id="bio">Loading...</p>
     </div>
   </header>
 
   <div class="container">
     <main>
-      <!-- Only 3 stats now: Repos, Stars, Followers -->
       <div class="stats" id="stats">
         <div class="stat-card"><div class="stat-number" id="reposCount">-</div><div class="stat-label">Repositories</div></div>
         <div class="stat-card"><div class="stat-number" id="starsCount">-</div><div class="stat-label">Total Stars</div></div>
         <div class="stat-card"><div class="stat-number" id="followers">-</div><div class="stat-label">Followers</div></div>
       </div>
 
-      <h2 style="font-size: 2rem; margin: 3rem 0 2rem; text-align:center;">My Projects</h2>
+      <h2>My Projects</h2>
       <div class="repos-grid" id="reposGrid">
-        <div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading repositories...</div>
+        <div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading awesome projects...</div>
       </div>
     </main>
   </div>
 
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <footer>
-    <p>Made with ❤️ by shortageofname</p>
+    <p>Made with <3 by shortageofname</p>
   </footer>
 
   <script>
     const GITHUB_USERNAME = "shortageofname";
     const API_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
-    const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`;
+    const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`;
 
-    // Theme toggle
+    // Theme
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -265,57 +293,69 @@
       }
     });
 
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 500);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     const languageColors = {
       JavaScript: "#f1e05a", TypeScript: "#2b7489", Python: "#3572A5",
-      HTML: "#e34c26", CSS: "#563d7c", Java: "#b07219", Go: "#00ADD8",
-      Rust: "#dea584", React: "#61dafb", Vue: "#41b883", Svelte: "#ff3e00"
+      HTML: "#e34c26", CSS: "#563d7c", Go: "#00ADD8", Rust: "#dea584",
+      // add more if you want
     };
 
-    async function fetchGitHubData() {
+    async function loadData() {
       try {
         const [userRes, reposRes] = await Promise.all([fetch(API_URL), fetch(REPOS_URL)]);
         const user = await userRes.json();
         const repos = await reposRes.json();
 
+        // Profile
         document.getElementById('avatar').src = user.avatar_url;
         document.getElementById('name').textContent = user.name || user.login;
-        document.getElementById('bio').textContent = user.bio || "Security enthusiast & developer";
+        document.getElementById('bio').textContent = user.bio || "Security enthusiast ∙ Developer ∙ Open-source lover";
 
+        // Stats
         document.getElementById('reposCount').textContent = user.public_repos;
         document.getElementById('followers').textContent = user.followers;
-        const totalStars = repos.reduce((acc, r) => acc + r.stargazers_count, 0);
+        const totalStars = repos.reduce((a, r) => a + r.stargazers_count, 0);
         document.getElementById('starsCount').textContent = totalStars;
 
-        const reposGrid = document.getElementById('reposGrid');
-        reposGrid.innerHTML = '';
+        // Repos
+        const grid = document.getElementById('reposGrid');
+        grid.innerHTML = '';
 
         repos
-          .filter(repo => !repo.fork)
+          .filter(r => !r.fork)
           .sort((a, b) => b.stargazers_count - a.stargazers_count)
           .forEach(repo => {
-            const lang = repo.language || "Other";
-            const color = languageColors[lang] || "#888";
+            const lang = repo.language || "";
+            const color = languageColors[lang] || "#94a3b8";
 
             const card = document.createElement('div');
             card.className = 'repo-card';
             card.innerHTML = `
               <a href="${repo.html_url}" target="_blank" class="repo-name">${repo.name}</a>
-              <p class="repo-desc">${repo.description || "No description provided."}</p>
+              <p class="repo-desc">${repo.description || "No description"}</p>
               <div class="repo-meta">
-                ${repo.language ? `<span><span class="language-color" style="background:${color}"></span> ${lang}</span>` : ''}
+                ${lang ? `<span><span class="language-color" style="background:${color}"></span> ${lang}</span>` : ''}
                 <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                <span><i class="fas fa-eye"></i> ${repo.watchers_count}</span>
               </div>
             `;
-            reposGrid.appendChild(card);
+            grid.appendChild(card);
           });
 
-      } catch (err) {
-        document.getElementById('reposGrid').innerHTML = 
-          `<div class="error">Failed to load repositories. Try again later.</div>`;
+      } catch (e) {
+        document.getElementById('reposGrid').innerHTML = `<div class="error">Could not load data — try again later.</div>`;
       }
     }
 
-    fetchGitHubData();
+    loadData();
   </script>
 </body>
 </html>
