@@ -21,7 +21,6 @@
       --border: rgba(0,0,0,0.1);
       --primary: #8b5cf6;
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -29,7 +28,6 @@
       color: var(--text);
       transition: all 0.4s ease;
     }
-
     header {
       padding: 6rem 2rem 4rem;
       text-align: center;
@@ -37,176 +35,74 @@
       background-size: 400% 400%;
       animation: gradient 16s ease infinite;
     }
-    @keyframes gradient {
-      0%,100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .avatar {
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      border: 6px solid rgba(255,255,255,0.3);
-      margin-bottom: 1.5rem;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    }
-
-    h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      color: white;
-      margin: 0.5rem 0;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-
-    .tagline {
-      font-size: 1.35rem;
-      color: rgba(255,255,255,0.95);
-      margin: 1rem 0 2.5rem;
-      font-weight: 500;
-    }
-
-    .resume-btn {
-      background: white;
-      color: #8b5cf6;
-      padding: 16px 40px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
+    @keyframes gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .avatar { width: 140px; height: 140px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.3); margin-bottom: 1.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+    h1 { font-size: 3.4rem; font-weight: 800; color: white; margin: 0.5rem 0; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .tagline { font-size: 1.35rem; color: rgba(255,255,255,0.95); margin: 1rem 0 2.5rem; font-weight: 500; }
+    .resume-btn { background: white; color: #8b5cf6; padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.3); transition: 0.3s; }
     .resume-btn:hover { transform: translateY(-5px); }
-
     .top-bar {
-      position: fixed;
-      top: 24px;
-      right: 24px;
-      display: flex;
-      gap: 16px;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(16px);
-      padding: 14px 20px;
-      border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.15);
-      z-index: 1000;
+      position: fixed; top: 24px; right: 24px; display: flex; gap: 16px;
+      background: rgba(0,0,0,0.3); backdrop-filter: blur(16px);
+      padding: 14px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15); z-index: 1000;
     }
-    .top-bar a, .top-bar button {
-      color: white;
-      font-size: 1.4rem;
-      width: 48px; height: 48px;
-      display: grid; place-items: center;
-      border-radius: 50%;
-      background: none; border: none; cursor: pointer;
-      transition: 0.3s;
-    }
-    .top-bar a:hover, .top-bar button:hover {
-      background: rgba(255,255,255,0.2);
-      transform: scale(1.2);
-    }
-
+    .top-bar a, .top-bar button { color: white; font-size: 1.4rem; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: none; border: none; cursor: pointer; transition: 0.3s; }
+    .top-bar a:hover, .top-bar button:hover { background: rgba(255,255,255,0.2); transform: scale(1.2); }
     .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 5rem;
-    }
-    .stat-card {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      padding: 2rem;
-      border-radius: 24px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
+    .stat-card { background: var(--card); backdrop-filter: blur(12px); padding: 2rem; border-radius: 24px; text-align: center; border: 1px solid var(--border); }
     .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); }
-
-    h2 {
-      text-align: center;
-      font-size: 2.6rem;
-      margin: 4rem 0 3rem;
-      color: var(--text);
-      font-weight: 700;
-    }
-
+    h2 { text-align: center; font-size: 2.6rem; margin: 4rem 0 3rem; color: var(--text); font-weight: 700; }
     .about {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      padding: 2.5rem;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: 0 auto 5rem;
+      background: var(--card); backdrop-filter: blur(12px); padding: 2.5rem; border-radius: 24px;
+      border: 1px solid var(--border); text-align: center; font-size: 1.15rem; line-height: 1.8;
+      max-width: 900px; margin: 0 auto 5rem;
     }
-
-    /* FIXED: All progress bars same size & animated */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      max-width: 1000px;
+      margin: 0 auto 5rem;
     }
-    .skill-item {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      padding: 1.8rem;
+    .skill-card {
+      background: rgba(70, 50, 120, 0.45);
+      backdrop-filter: blur(14px);
       border-radius: 20px;
-      border: 1px solid var(--border);
+      padding: 1.8rem;
       display: flex;
       align-items: center;
       gap: 1.2rem;
-    }
-    .skill-icon {
-      font-size: 2.8rem;
-      color: var(--primary);
-      min-width: 60px;
-    }
-    .skill-info h3 {
-      margin: 0 0 0.8rem;
-      font-size: 1.2rem;
-    }
-    .progress-bar {
-      height: 12px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 10px;
-      overflow: hidden;
-      flex: 1;
-    }
-    .progress {
-      height: 100%;
-      background: linear-gradient(90deg, #8b5cf6, #c084fc);
-      width: 0%;
-      border-radius: 10px;
-      transition: width 2s ease-out;
-    }
-
-    .certs-grid, .repos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.8rem;
-    }
-    .cert-card, .repo-card {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      padding: 2rem;
-      border-radius: 20px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(139, 92, 246, 0.25);
       transition: transform 0.3s;
     }
-    .cert-card:hover, .repo-card:hover { transform: translateY(-10px); }
+    .skill-card:hover { transform: translateY(-6px); }
+    .skill-card i { font-size: 2.6rem; color: #c084fc; flex-shrink: 0; }
+    .skill-info { flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+    .skill-info h3 { color: white; margin: 0; font-size: 1.15rem; font-weight: 600; }
+    .progress-container { height: 12px; background: rgba(255,255,255,0.15); border-radius: 10px; overflow: hidden; width: 100%; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #c084fc, #e879f9); border-radius: 10px; width: 0%; transition: width 2.2s cubic-bezier(0.65, 0, 0.35, 1); }
+    .certificates-box {
+      background: var(--card); backdrop-filter: blur(14px); border: 1px solid var(--border); border-radius: 24px;
+      padding: 2rem 2.5rem; max-width: 900px; margin: 0 auto 5rem;
+    }
+    .cert-list { list-style: none; }
+    .cert-list li {
+      padding: 1rem 0; border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem;
+    }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-name { color: var(--primary); font-weight: 600; }
+    .cert-issuer { color: #94a3b8; font-size: 0.95rem; }
+    .repos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.8rem; }
+    .repo-card { background: var(--card); backdrop-filter: blur(12px); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); transition: transform 0.3s; }
+    .repo-card:hover { transform: translateY(-10px); }
     .repo-name { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.3rem; }
     .repo-name:hover { text-decoration: underline; }
-
     footer { text-align: center; padding: 4rem 1rem; color: #94a3b8; }
   </style>
 </head>
 <body>
-
-  <!-- Your Correct Links + Working Theme Button -->
   <div class="top-bar">
     <a href="https://github.com/shortageofname" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com/in/prashant-cybersecurity" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -223,11 +119,10 @@
   </header>
 
   <div class="container">
-
     <div class="stats" id="stats">
-      <div class="stat-card"><div class="stat-number" id="reposCount">0</div><div>Repositories</div></div>
-      <div class="stat-card"><div class="stat-number" id="starsCount">0</div><div>Total Stars</div></div>
-      <div class="stat-card"><div class="stat-number" id="followers">0</div><div>Followers</div></div>
+      <div class="stat-card"><div class="stat-number" id="reposCount">—</div><div>Repositories</div></div>
+      <div class="stat-card"><div class="stat-number" id="starsCount">—</div><div>Total Stars</div></div>
+      <div class="stat-card"><div class="stat-number" id="followers">—</div><div>Followers</div></div>
     </div>
 
     <div class="about">
@@ -236,41 +131,45 @@
 
     <h2>Skills</h2>
     <div class="skills-grid">
-      <div class="skill-item">
-        <i class="fas fa-shield-alt skill-icon"></i>
+      <div class="skill-card">
+        <i class="fas fa-shield-alt"></i>
         <div class="skill-info">
           <h3>Cybersecurity</h3>
-          <div class="progress-bar"><div class="progress" data-width="92"></div></div>
+          <div class="progress-container"><div class="progress-fill" data-percent="92"></div></div>
         </div>
       </div>
-      <div class="skill-item">
-        <i class="fab fa-python skill-icon"></i>
+      <div class="skill-card">
+        <i class="fab fa-python"></i>
         <div class="skill-info">
           <h3>Python</h3>
-          <div class="progress-bar"><div class="progress" data-width="88"></div></div>
+          <div class="progress-container"><div class="progress-fill" data-percent="88"></div></div>
         </div>
       </div>
-      <div class="skill-item">
-        <i class="fab fa-linux skill-icon"></i>
+      <div class="skill-card">
+        <i class="fab fa-linux"></i>
         <div class="skill-info">
           <h3>Linux</h3>
-          <div class="progress-bar"><div class="progress" data-width="85"></div></div>
+          <div class="progress-container"><div class="progress-fill" data-percent="85"></div></div>
         </div>
       </div>
-      <div class="skill-item">
-        <i class="fas fa-network-wired skill-icon"></i>
+      <div class="skill-card">
+        <i class="fas fa-network-wired"></i>
         <div class="skill-info">
           <h3>Network Security</h3>
-          <div class="progress-bar"><div class="progress" data-width="78"></div></div>
+          <div class="progress-container"><div class="progress-fill" data-percent="78"></div></div>
         </div>
       </div>
     </div>
 
     <h2>Certifications</h2>
-    <div class="certs-grid">
-      <div class="cert-card"><h3>CompTIA Security+</h3><p>CompTIA • 2024</p></div>
-      <div class="cert-card"><h3>Google Cybersecurity Certificate</h3><p>Google • 2024</p></div>
-      <div class="cert-card"><h3>TryHackMe Learning Paths</h3><p>TryHackMe • 2023</p></div>
+    <div class="certificates-box">
+      <ul class="cert-list">
+        <li><span class="cert-name">Google Cybersecurity Professional Certificate</span><span class="cert-issuer">Google</span></li>
+        <li><span class="cert-name">Cybersecurity and Privacy</span><span class="cert-issuer">Microsoft</span></li>
+        <li><span class="cert-name">Linux Commands and Shell Scripting</span><span class="cert-issuer">IBM</span></li>
+        <li><span class="cert-name">Applied ChatGPT for Cybersecurity</span><span class="cert-issuer">InfoSEC</span></li>
+        <li><span class="cert-name">Introduction to FastAPI framework</span><span class="cert-issuer">Duke University</span></li>
+      </ul>
     </div>
 
     <h2>Projects</h2>
@@ -279,26 +178,24 @@
         <i class="fas fa-spinner fa-spin fa-3x"></i><br><br>Loading projects...
       </div>
     </div>
-
   </div>
 
-  <footer>© 2025 Prashant Thakur • Built with passion</footer>
+  <footer id="dynamicFooter">© Prashant Thakur • Built with passion</footer>
 
   <script>
     const username = "shortageofname";
 
-    // Theme Toggle - 100% FIXED
-    const themeBtn = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme');
+    // Dynamic Year (India Time)
+    const nowIndia = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+    const year = new Date(nowIndia).getFullYear();
+    document.getElementById('dynamicFooter').innerHTML = `© ${year} Prashant Thakur • Built with passion`;
 
-    if (savedTheme === 'light') {
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
     }
-
     themeBtn.addEventListener('click', () => {
       if (document.documentElement.hasAttribute('data-theme')) {
         document.documentElement.removeAttribute('data-theme');
@@ -311,54 +208,72 @@
       }
     });
 
-    // Animate progress bars when section is visible
-    const progressObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.progress').forEach(bar => {
-            const width = bar.getAttribute('data-width') + '%';
-            setTimeout(() => bar.style.width = width, 300);
-          });
-        }
-      });
+    // Progress Bar Animation
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+          bar.style.width = bar.getAttribute('data-percent') + '%';
+        });
+      }
     }, { threshold: 0.6 });
+    observer.observe(document.querySelector('.skills-grid'));
 
-    progressObserver.observe(document.querySelector('.skills-grid'));
-
-    // Load GitHub Data - 100% WORKING
+    // FIXED: GitHub Data Loading (with proper headers to avoid rate limit)
     async function loadGitHubData() {
       try {
-        const userRes = await fetch(`https://api.github.com/users/${username}`);
-        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
+        const headers = { 'User-Agent': 'Portfolio-App' };
+
+        const [userRes, reposRes] = await Promise.all([
+          fetch(`https://api.github.com/users/${username}`, { headers }),
+          fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, { headers })
+        ]);
+
+        if (!userRes.ok || !reposRes.ok) throw new Error("GitHub API limit or user not found");
 
         const user = await userRes.json();
         const repos = await reposRes.json();
 
         // Update stats
-        document.getElementById('reposCount').textContent = user.public_repos;
-        document.getElementById('followers').textContent = user.followers;
-        document.getElementById('starsCount').textContent = repos.reduce((a, r) => a + r.stargazers_count, 0);
+        document.getElementById('reposCount').textContent = user.public_repos || 0;
+        document.getElementById('followers').textContent = user.followers || 0;
+        const totalStars = repos.reduce((acc, repo) => acc + (repo.stargazers_count || 0), 0);
+        document.getElementById('starsCount').textContent = totalStars;
 
         // Load projects
         const grid = document.getElementById('reposGrid');
         grid.innerHTML = '';
+
         repos
-          .filter(r => !r.fork)
-          .sort((a, b) => b.stargazers_count - a.stargazers_count)
-          .forEach(r => {
+          .filter(repo => !repo.fork && repo.description)
+          .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
+          .slice(0, 9) // Show only top 9
+          .forEach(repo => {
+            const langColor = repo.language === 'Python' ? '#3572A5' : 
+                             repo.language === 'JavaScript' ? '#f1e05a' : '#6e5494';
             grid.innerHTML += `
               <div class="repo-card">
-                <a href="${r.html_url}" target="_blank" class="repo-name">${r.name}</a>
-                <p style="margin:1rem 0;color:#94a3b8;">${r.description || "No description"}</p>
+                <a href="${repo.html_url}" target="_blank" class="repo-name">${repo.name}</a>
+                <p style="margin:1rem 0;color:#94a3b8;">${repo.description || "No description"}</p>
                 <div style="font-size:0.9rem;color:#64748b;">
-                  ${r.language ? `<span><i class="fas fa-circle" style="color:${r.language==='Python'?'#3572A5':'#f1e05a'}"></i> ${r.language}</span>` : ''}
-                  <span style="margin-left:1rem;"><i class="fas fa-star"></i> ${r.stargazers_count}</span>
+                  ${repo.language ? `<span><i class="fas fa-circle" style="color:${langColor}"></i> ${repo.language}</span>` : ''}
+                  <span style="margin-left:1rem;"><i class="fas fa-star"></i> ${repo.stargazers_count || 0}</span>
+                  <span style="margin-left:1rem;"><i class="fas fa-code-branch"></i> ${repo.forks_count || 0}</span>
                 </div>
               </div>
             `;
           });
+
+        if (grid.innerHTML === '') {
+          grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:#94a3b8;">No public projects found</div>';
+        }
+
       } catch (err) {
-        document.getElementById('reposGrid').innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#94a3b8;padding:4rem;">Failed to load projects</div>';
+        console.error("GitHub load failed:", err);
+        document.getElementById('reposGrid').innerHTML = 
+          '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:#94a3b8;">GitHub data temporarily unavailable</div>';
+        document.getElementById('reposCount').textContent = '?';
+        document.getElementById('starsCount').textContent = '?';
+        document.getElementById('followers').textContent = '?';
       }
     }
 
