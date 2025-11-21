@@ -1,12 +1,12 @@
 # Prashant's Portfolio
 
-A clean, minimalist, single-page personal portfolio. Currently under active development.
+A clean, minimalist, personal portfolio. Currently under active development.
 
-Live Demo: https://shortageofname.github.io/Temp-Portfolio
+Live: https://prashant.us.kg
 
 ## Features
 
-- Fully responsive (mobile-first)
+- Fully responsive
 - Smooth scrolling navigation
 - Modern, clean design with glassmorphism accents
 - Dark/light mode
