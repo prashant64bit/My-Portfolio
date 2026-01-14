@@ -2,6 +2,8 @@
 
 A clean, minimalist, personal portfolio. Currently under active development.
 
+## Live Demo
+
 Live: https://prashant.us.kg
 
 ## Features
@@ -18,5 +20,5 @@ Live: https://prashant.us.kg
 - CSS3 (custom styles in `styles.css`)
 - Vanilla JavaScript (`script.js`)
 
-## License
-MIT © Prashant64bit
+## LICENSE
+This project is licensed under the [MIT License](LICENSE).
