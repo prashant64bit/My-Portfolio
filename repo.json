@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Temp-Cleaner",
+    "description": "Simple Windows Cleaner - Removes temp files, caches, DNS, Windows Update junk, and Useless Windows Files.",
+    "image": "assets/Temp-Cleaner.png",
+    "tech": ["Batchfile", "Windows"],
+    "website": null,
+    "source": "https://github.com/Prashant64bit/Temp-Cleaner",
+    "demo": null
+  },
+  {
+    "name": "CustomQrAmount",
+    "description": "A web app that generates a UPI payment QR after the user enters an amount. Easy to host, easy to customize, and runs entirely in the browser.",
+    "image": "assets/CustomQrAmount.png",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "website": "https://CustomQrAmount.us.kg",
+    "source": "https://github.com/Prashant64bit/CustomQrAmount",
+    "demo": "https://CustomQrAmount.us.kg"
+  }
+]
