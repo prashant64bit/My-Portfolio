@@ -16,5 +16,14 @@
     "website": "https://CustomQrAmount.us.kg",
     "source": "https://github.com/Prashant64bit/CustomQrAmount",
     "demo": "https://CustomQrAmount.us.kg"
+  },
+  {
+    "name": "TeleSysControl",
+    "description": "TeleSysControl is a system control and management project designed to use Windows laptop through a Telegram Bot.",
+    "image": "assets/TeleSysControl.png",
+    "tech": ["Python", "Telethon", "Powershell"],
+    "website": null,
+    "source": "https://github.com/Prashant64bit/TeleSysControl",
+    "demo": null
   }
 ]
