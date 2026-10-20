@@ -1,24 +1,27 @@
 # Prashant's Portfolio
 
-A clean, minimalist, personal portfolio. Currently under active development.
-
-## Live Demo
+Personal portfolio site, hosted on GitHub Pages.
 
 Live: https://prashantthakur.is-a.dev
 
-## Features
+## Stack
 
-- Fully responsive
-- Smooth scrolling navigation
-- Modern, clean design with glassmorphism accents
-- Dark/light mode
-- Built with pure HTML, CSS, and vanilla JavaScript (no frameworks)
+- Hand-written HTML and CSS. No frameworks, no JavaScript dependencies.
+- Manual light/dark pull-chain toggle with spring physics, saved in `localStorage`.
+- Images in WebP, with PNG favicons and an Open Graph card.
 
-## Tech Stack
+## Structure
 
-- HTML5
-- CSS3 (custom styles in `styles.css`)
-- Vanilla JavaScript (`script.js`)
+```
+index.html      Markup and content
+styles.css      Design tokens, layout, responsive rules
+assets/         Favicons, Open Graph image, project screenshots
+resume.pdf      Résumé (linked from the header and contact section)
+CNAME           Custom domain for GitHub Pages
+```
 
-## LICENSE
-This project is licensed under the [MIT License](LICENSE).
+`resume.pdf` is currently a placeholder and needs to be replaced with the real résumé.
+
+## License
+
+[MIT](LICENSE)
