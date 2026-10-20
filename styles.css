@@ -530,6 +530,11 @@ h1 {
   font-size: 1rem;
 }
 
+.cert-name span {
+  margin-left: 0.2rem;
+  font-size: 0.8em;
+}
+
 .cert-issuer {
   color: var(--muted);
   font-family: var(--mono);
